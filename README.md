@@ -2,7 +2,7 @@
 
 
 - **FastAPI backend**: request construction, timeout/retry/backoff, disk cache, SoilGrids fair-use pause, JSON parsing, `d_factor` conversion, joining, water balance, summaries, provenance.
-- **Next.js frontend**: vibrant green dashboard, responsive controls, charts, audit log, data table, CSV export and loading/error states.
+- **Next.js frontend**: responsive controls, charts, audit log, data table, CSV export and loading/error states.
 
 
 ## Quick start
