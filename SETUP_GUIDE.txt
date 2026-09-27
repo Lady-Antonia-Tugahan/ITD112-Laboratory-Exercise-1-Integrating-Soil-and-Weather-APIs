@@ -1,0 +1,77 @@
+ITD112 LAB 1 — FASTAPI + NEXT.JS SETUP GUIDE
+=============================================
+
+WHAT TO INSTALL
+1. Python 3.10 or newer
+2. Node.js 20 or newer (includes npm)
+3. A browser such as Chrome/Safari/Edge
+4. VS Code is optional
+
+WHAT TO OPEN
+You need TWO Terminal windows while running the project:
+- Terminal 1 = FastAPI backend
+- Terminal 2 = Next.js frontend
+
+BACKEND
+1. Extract the ZIP.
+2. Open Terminal and cd into the extracted project, then:
+   cd backend
+3. Create environment:
+   python3 -m venv .venv
+4. Activate on macOS/Linux:
+   source .venv/bin/activate
+   Windows PowerShell:
+   .venv\Scripts\Activate.ps1
+5. Install:
+   python -m pip install -r requirements.txt
+6. Run:
+   python -m uvicorn app.main:app --reload --port 8000
+7. Keep this Terminal open.
+8. Optional API docs: http://localhost:8000/docs
+
+FRONTEND
+1. Open a SECOND Terminal.
+2. cd into the extracted project, then:
+   cd frontend
+3. Install packages:
+   npm install
+4. Run:
+   npm run dev
+5. Keep this Terminal open.
+6. Open http://localhost:3000
+
+USING THE DASHBOARD
+1. Select one or more Mindanao sites.
+2. Choose valid dates.
+3. Click Run integration.
+4. Wait for first-time SoilGrids calls. A fair-use delay is intentional.
+5. Review metrics, charts, audit logs and table.
+6. Download site_summary.csv and integrated_daily.csv.
+
+STOPPING
+Press Ctrl+C in BOTH terminals.
+
+RUNNING AGAIN LATER
+Backend terminal:
+  cd backend
+  source .venv/bin/activate
+  python -m uvicorn app.main:app --reload --port 8000
+Frontend terminal:
+  cd frontend
+  npm run dev
+
+TROUBLESHOOTING
+- "FastAPI is not reachable": backend is not running on port 8000.
+- npm not found: install Node.js, close/reopen Terminal.
+- python3 not found: install Python and reopen Terminal.
+- Port already in use: stop the older server with Ctrl+C.
+- SoilGrids error: it is a beta public service and may be temporarily paused. Cached requests still work.
+
+OPTIONAL CHALLENGES IN THIS BUILD
+---------------------------------
+- Soil depth profile: 0-5, 5-15, 15-30 cm
+- SoilGrids uncertainty: Q0.05, mean, Q0.95
+- Open-Meteo: historical archive + coming 16-day forecast
+- Split architecture: FastAPI backend + Next.js 16.3.6 frontend
+
+After Run Integration, scroll below the original Q1-Q6 section to see the new Depth + Uncertainty and Forecast panels.
