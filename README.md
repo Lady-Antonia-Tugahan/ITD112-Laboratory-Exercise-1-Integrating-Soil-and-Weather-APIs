@@ -1,6 +1,5 @@
-# ITD112 Lab 1 — FastAPI + Next.js Split Architecture
+# ITD112 Laboratory Exercise 1 — Integrating Soil and Weather APIs
 
-This is the same SoilGrids + Open-Meteo integration pipeline rebuilt as a separated application:
 
 - **FastAPI backend**: request construction, timeout/retry/backoff, disk cache, SoilGrids fair-use pause, JSON parsing, `d_factor` conversion, joining, water balance, summaries, provenance.
 - **Next.js frontend**: vibrant green dashboard, responsive controls, charts, audit log, data table, CSV export and loading/error states.
@@ -55,12 +54,7 @@ Example request:
 {"sites":["Iligan City","Malaybalay"],"start_date":"2025-01-01","end_date":"2025-12-31"}
 ```
 
-## Submission notes
-Do not commit `backend/.venv`, `frontend/node_modules`, `.next`, or Python bytecode. The `backend/cache/` directory is intentionally retained so cached public API responses can be committed if your instructor wants reproducible/offline-friendly demos.
-
-## Optional challenge extensions (v2)
-
-This build implements all four requested optional extensions:
+## Extensions
 
 1. **Depth dimension** — SoilGrids is queried for 0–5 cm, 5–15 cm and 15–30 cm. The dashboard includes site-selectable sand, silt and clay profile charts.
 2. **Forecast + archive** — Open-Meteo Historical Archive remains the source for the selected historical period, while the Forecast API adds the coming 16 days for the selected sites.
